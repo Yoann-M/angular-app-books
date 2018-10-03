@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { Routes } from '@angular/router';
 
 import { AppComponent } from './components/app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -14,6 +15,15 @@ import { AuthSignupComponent } from './components/auth/auth-signup/auth-signup.c
 import { AuthService } from './services/auth.service';
 import { AuthGuardService } from './services/auth-guard.service';
 import { BooksService } from './services/books.service';
+
+//Routing
+const appRoutes: Routes = [
+  { path: 'auth/signup', component: AuthSignupComponent },
+  { path: 'auth/signin', component: AuthSigninComponent },
+  { path: 'books', component: BooksComponent },
+  { path: 'books/new', component: BooksFormComponent },
+  { path: 'books/view/:id', component: BooksDetailComponent },
+]
 
 @NgModule({
   declarations: [
