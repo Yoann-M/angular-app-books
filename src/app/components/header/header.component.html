@@ -5,9 +5,12 @@
       </ul>
   </div>
   <div class="uk-navbar-right">
-      <ul class="uk-navbar-nav">
+      <ul class="uk-navbar-nav" *ngIf="!isAuth">
           <li routerLinkActive="uk-active"><a routerLink="auth/signup">Créer un compte</a></li>
           <li routerLinkActive="uk-active"><a routerLink="auth/signin">Se connecter</a></li>
+      </ul>
+      <ul class="uk-navbar-nav" *ngIf="isAuth">
+          <li routerLinkActive="uk-active"><a (click)="onSignOut()">Se déconnecter</a></li>
       </ul>
   </div>
 </nav>
