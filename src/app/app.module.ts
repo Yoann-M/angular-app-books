@@ -20,9 +20,11 @@ import { BooksService } from './services/books.service';
 const appRoutes: Routes = [
   { path: 'auth/signup', component: AuthSignupComponent },
   { path: 'auth/signin', component: AuthSigninComponent },
-  { path: 'books', component: BooksComponent },
-  { path: 'books/new', component: BooksFormComponent },
-  { path: 'books/view/:id', component: BooksDetailComponent },
+  { path: 'books', canActivate: [AuthGuardService], component: BooksComponent },
+  { path: 'books/new', canActivate: [AuthGuardService], component: BooksFormComponent },
+  { path: 'books/view/:id', canActivate: [AuthGuardService], component: BooksDetailComponent },
+  { path: '', redirectTo: 'books', pathMatch : 'full' },
+  { path: '**', redirectTo: 'books' }
 ]
 
 @NgModule({
