@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { Routes } from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
 
 import { AppComponent } from './components/app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -39,7 +39,8 @@ const appRoutes: Routes = [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [
     AuthService,
