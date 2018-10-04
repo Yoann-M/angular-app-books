@@ -1,16 +1,20 @@
-<nav class="uk-navbar-container" uk-navbar>
-  <div class="uk-navbar-left">
-      <ul class="uk-navbar-nav">
-          <li routerLinkActive="uk-active"><a routerLink="books">Livre</a></li>
-      </ul>
-  </div>
-  <div class="uk-navbar-right">
-      <ul class="uk-navbar-nav" *ngIf="!isAuth">
-          <li routerLinkActive="uk-active"><a routerLink="auth/signup">Créer un compte</a></li>
-          <li routerLinkActive="uk-active"><a routerLink="auth/signin">Se connecter</a></li>
-      </ul>
-      <ul class="uk-navbar-nav" *ngIf="isAuth">
-          <li routerLinkActive="uk-active"><a (click)="onSignOut()">Se déconnecter</a></li>
-      </ul>
-  </div>
-</nav>
+<header class="header">
+    <div class="uk-container">
+        <nav uk-navbar>
+            <div class="uk-navbar-left">
+                <ul class="uk-navbar-nav">
+                    <li routerLinkActive="uk-active"><a routerLink="books">Livre</a></li>
+                </ul>
+            </div>
+            <div class="uk-navbar-right">
+                <ul class="uk-navbar-nav" *ngIf="!isAuth">
+                    <li routerLinkActive="uk-active"><a routerLink="auth/signup">Créer un compte</a></li>
+                    <li routerLinkActive="uk-active"><a routerLink="auth/signin">Se connecter</a></li>
+                </ul>
+                <ul class="uk-navbar-nav" *ngIf="isAuth">
+                    <li routerLinkActive="uk-active"><a (click)="onSignOut()">Se déconnecter</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</header>

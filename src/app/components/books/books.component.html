@@ -1,3 +1,24 @@
-<p>
-  books works!
-</p>
+<h1 class="uk-h3 uk-float-left">Vos livres</h1>
+<button class="uk-button uk-button-primary uk-float-right" type="button" (click)="onNewBook()">Nouveau livre</button>
+<table class="uk-table uk-table-middle uk-table-divider">
+  <thead>
+    <tr>
+      <th class="uk-table-expand"></th>
+      <th class="uk-width-small"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let book of books; let i = index">
+      <td class="uk-table-link">
+        <a class="uk-link-reset" (click)="onViewBook(i)">
+            {{ book.title }} <br>
+            <small>Auteur : {{ book.author }}</small>
+        </a>
+      </td>
+      <td>
+        <a class="uk-icon-link uk-margin-small-right" uk-icon="file-edit" (click)="onViewBook(i)" title="Modifier ce livre"></a>
+        <a  class="uk-icon-link" uk-icon="trash" (click)="onPreventDeleteBook(book)" title="Supprimer ce livre"></a>
+      </td>
+    </tr>
+  </tbody>
+</table>
